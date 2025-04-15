@@ -29,10 +29,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>ru.volnenko.example.json</groupId>
+            <groupId>ru.volnenko.example.yaml</groupId>
             <artifactId>openapi</artifactId>
             <version>1.0.0</version>
-            <type>json</type>
+            <type>yaml</type>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -62,6 +62,20 @@
             </extension>
         </extensions>
     </build>
+
+    <repositories>
+        <repository>
+            <id>maven.volnenko.ru</id>
+            <name>maven.volnenko.ru</name>
+            <url>https://maven.volnenko.ru/repository</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <distributionManagement>
         <repository>

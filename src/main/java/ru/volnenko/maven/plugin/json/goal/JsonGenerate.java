@@ -47,7 +47,7 @@ public class JsonGenerate extends AbstractMojo {
                 System.out.println(dependency);
                 final String name = dependency.getGroupId().replace(".", "/") + "/"
                         + dependency.getArtifactId() + "/" + dependency.getVersion() + "/"
-                        + dependency.getArtifactId() + "-" + dependency.getVersion() + ".json";
+                        + dependency.getArtifactId() + "-" + dependency.getVersion() + "." + dependency.getType();
                 final File file = new File(settings.getLocalRepository(), name);
                 final String filename = file.getAbsolutePath();
                 if (!file.exists()) {
