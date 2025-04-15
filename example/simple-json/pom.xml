@@ -28,6 +28,7 @@
     </properties>
 
     <build>
+        <finalName>example</finalName>
         <plugins>
             <plugin>
                 <groupId>ru.volnenko.maven.plugin</groupId>

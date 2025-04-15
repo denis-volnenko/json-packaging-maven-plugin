@@ -103,6 +103,7 @@ https://github.com/denis-volnenko/json-packaging-maven-plugin
     <packaging>json</packaging>
     ...
     <build>
+        <finalName>openapi</finalName>
         <plugins>
             <plugin>
                 <groupId>ru.volnenko.maven.plugin</groupId>
