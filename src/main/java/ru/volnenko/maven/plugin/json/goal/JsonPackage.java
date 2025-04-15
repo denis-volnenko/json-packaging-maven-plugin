@@ -1,4 +1,4 @@
-package ru.volnenko.maven.plugin.json;
+package ru.volnenko.maven.plugin.json.goal;
 
 import lombok.NonNull;
 import lombok.SneakyThrows;
