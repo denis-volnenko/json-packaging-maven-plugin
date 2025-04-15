@@ -1,5 +1,6 @@
 package ru.volnenko.maven.plugin.json;
 
+import lombok.NonNull;
 import lombok.SneakyThrows;
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.AbstractMojo;
@@ -19,13 +20,13 @@ public class JsonPackage extends AbstractMojo {
     @Override
     @SneakyThrows
     public void execute() {
-        final File buildPath = new File(project.getBuild().getDirectory());
+        @NonNull final File buildPath = new File(project.getBuild().getDirectory());
         buildPath.mkdirs();
 
-        final String sourceNameJSON = project.getBuild().getFinalName() + "." + project.getPackaging();
-        final File build = new File(project.getBuild().getDirectory(), sourceNameJSON);
+        @NonNull final String sourceNameJSON = project.getBuild().getFinalName() + "." + project.getPackaging();
+        @NonNull final File build = new File(project.getBuild().getDirectory(), sourceNameJSON);
 
-        final Artifact artifact =  project.getArtifact();
+        @NonNull final Artifact artifact =  project.getArtifact();
         artifact.setFile(build);
     }
 

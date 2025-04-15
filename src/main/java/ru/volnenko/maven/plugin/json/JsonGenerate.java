@@ -1,6 +1,7 @@
 package ru.volnenko.maven.plugin.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.NonNull;
 import lombok.SneakyThrows;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -23,14 +24,14 @@ public class JsonGenerate extends AbstractMojo {
     @Override
     @SneakyThrows
     public void execute() throws MojoExecutionException, MojoFailureException {
-        final File buildPath = new File(project.getBuild().getDirectory());
+        @NonNull final File buildPath = new File(project.getBuild().getDirectory());
         buildPath.mkdirs();
 
-        final String sourceNameJSON = project.getBuild().getFinalName() + "." + project.getPackaging();
-        final File build = new File(project.getBuild().getDirectory(), sourceNameJSON);
+        @NonNull final String sourceNameJSON = project.getBuild().getFinalName() + "." + project.getPackaging();
+        @NonNull final File build = new File(project.getBuild().getDirectory(), sourceNameJSON);
 
-        final ObjectMapper objectMapper = new ObjectMapper();
-        final Map<String, Object> map = new LinkedHashMap<>();
+        @NonNull final ObjectMapper objectMapper = new ObjectMapper();
+        @NonNull final Map<String, Object> map = new LinkedHashMap<>();
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(build, map);
     }
 
