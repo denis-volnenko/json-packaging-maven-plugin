@@ -18,6 +18,9 @@
     </developers>
 
     <properties>
+        <extension.wagon.groupId>org.apache.maven.wagon</extension.wagon.groupId>
+        <extension.wagon.artifactId>wagon-webdav-jackrabbit</extension.wagon.artifactId>
+        <extension.wagon.version>3.5.2</extension.wagon.version>
         <aspectj.version>1.8.10</aspectj.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -72,6 +75,13 @@
                 </configuration>
             </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>${extension.wagon.groupId}</groupId>
+                <artifactId>${extension.wagon.artifactId}</artifactId>
+                <version>${extension.wagon.version}</version>
+            </extension>
+        </extensions>
     </build>
 
     <distributionManagement>
