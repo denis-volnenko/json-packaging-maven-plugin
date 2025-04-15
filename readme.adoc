@@ -1,0 +1,31 @@
+= json-packaging-maven-plugin
+:toc:
+
+== Project Info
+
+[cols="20,80"]
+|===
+
+|*Version*
+|1.0.1
+
+|*Java*
+|OpenJDK 8
+
+|*Maven*
+|3.6.3
+
+|===
+
+== Developer Info
+
+[cols="20,80"]
+|===
+
+|*Name*
+|Denis Volnenko
+
+|*E-mail*
+|denis@volnenko.ru
+
+|===
