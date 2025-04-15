@@ -34,6 +34,13 @@
                 <artifactId>json-packaging-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <files>
+                        <file>${project.basedir}/src/main/resources/foo.json</file>
+                        <file>${project.basedir}/src/main/resources/index.json</file>
+                        <file>${project.basedir}/src/main/resources/test.yaml</file>
+                    </files>
+                </configuration>
             </plugin>
         </plugins>
         <extensions>
