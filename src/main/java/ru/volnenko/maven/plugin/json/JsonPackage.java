@@ -24,17 +24,15 @@ public class JsonPackage extends AbstractMojo {
     @SneakyThrows
     public void execute() throws MojoExecutionException, MojoFailureException {
         System.out.println("[ PACKAGE ]");
+        final File buildPath = new File(project.getBuild().getDirectory());
+        buildPath.mkdirs();
 
-        new File(project.getBuild().getDirectory()).mkdirs();
-
-        final String name =
-                project.getBuild().getDirectory() + "/" +
-                        project.getBuild().getFinalName() + "." +
-                        project.getPackaging();
+        final String sourceNameJSON = project.getBuild().getFinalName() + "." + project.getPackaging();
+        final File build = new File(project.getBuild().getDirectory(), sourceNameJSON);
 
         final ObjectMapper objectMapper = new ObjectMapper();
         final Map<String, Object> map = new LinkedHashMap<>();
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(name), map);
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(build, map);
     }
 
 }
