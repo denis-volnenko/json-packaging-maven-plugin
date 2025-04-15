@@ -1,0 +1,37 @@
+<component-set>
+    <components>
+        <component>
+            <role>org.apache.maven.lifecycle.mapping.LifecycleMapping</role>
+            <role-hint>json</role-hint>
+            <implementation>
+                org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping
+            </implementation>
+            <configuration>
+                <phases>
+                    <clean>org.apache.maven.plugins:maven-clean-plugin:clean</clean>
+<!--                    <generate-resources>${project.groupId}:${project.artifactId}:${project.version}:json</generate-resources>-->
+<!--                    <process-resources>org.apache.maven.plugins:maven-resources-plugin:resources</process-resources>-->
+<!--                    <compile>org.apache.maven.plugins:maven-compiler-plugin:compile</compile>-->
+<!--                    <process-test-resources>org.apache.maven.plugins:maven-resources-plugin:testResources</process-test-resources>-->
+<!--                    <test-compile>org.apache.maven.plugins:maven-compiler-plugin:testCompile</test-compile>-->
+<!--                    <test>org.apache.maven.plugins:maven-surefire-plugin:test</test>-->
+<!--                    <prepare-package>org.apache.maven.plugins:maven-jar-plugin:jar</prepare-package>-->
+<!--                    <package>${project.groupId}:${project.artifactId}:${project.version}:fsm</package>-->
+                    <package>${project.groupId}:${project.artifactId}:${project.version}:package</package>
+                    <install>${project.groupId}:${project.artifactId}:${project.version}:install</install>
+                    <deploy>org.apache.maven.plugins:maven-deploy-plugin:deploy</deploy>
+                </phases>
+            </configuration>
+        </component>
+        <component>
+            <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+            <role-hint>json</role-hint>
+            <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
+            <configuration>
+                <extension>json</extension>
+                <type>json</type>
+                <packaging>json</packaging>
+            </configuration>
+        </component>
+    </components>
+</component-set>
