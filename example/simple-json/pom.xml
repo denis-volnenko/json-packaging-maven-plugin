@@ -27,6 +27,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>ru.volnenko.example.json</groupId>
+            <artifactId>openapi</artifactId>
+            <version>1.0.0</version>
+            <type>json</type>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>example</finalName>
         <plugins>
