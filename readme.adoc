@@ -32,7 +32,7 @@
 
 == Volnenko Maven Plugins
 
-[cols="20,80"]
+[cols="30,70"]
 |===
 
 |*Liquilbase*
