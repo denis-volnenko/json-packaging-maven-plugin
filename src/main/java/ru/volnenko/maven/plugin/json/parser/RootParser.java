@@ -1,4 +1,4 @@
-package ru.volnenko.maven.plugin.parser;
+package ru.volnenko.maven.plugin.json.parser;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.github.hemantsonu20.json.JsonMerge;
 import lombok.NonNull;
 import lombok.SneakyThrows;
-import ru.volnenko.maven.plugin.exception.UnsupportedFormatException;
+import ru.volnenko.maven.plugin.json.exception.UnsupportedFormatException;
 
 import java.io.File;
 import java.util.ArrayList;
