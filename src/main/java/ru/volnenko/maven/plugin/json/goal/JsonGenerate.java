@@ -44,19 +44,18 @@ public class JsonGenerate extends AbstractMojo {
             final DefaultArtifact dependency = (DefaultArtifact) dependencyObject;
             if (!"compile".equalsIgnoreCase(dependency.getScope())) continue;
             if ("json".equalsIgnoreCase(dependency.getType()) || "yaml".equalsIgnoreCase(dependency.getType())) {
-                System.out.println(dependency);
                 final String name = dependency.getGroupId().replace(".", "/") + "/"
                         + dependency.getArtifactId() + "/" + dependency.getVersion() + "/"
                         + dependency.getArtifactId() + "-" + dependency.getVersion() + "." + dependency.getType();
                 final File file = new File(settings.getLocalRepository(), name);
                 final String filename = file.getAbsolutePath();
                 if (!file.exists()) {
-                    System.err.println("Error! File `"+ filename + "` is not exists...");
+                    getLog().error("Error! File `"+ filename + "` is not exists...");
                     continue;
                 }
                 if (!files.contains(file.getAbsolutePath())) {
                     files.add(filename);
-                    System.out.println("ADD:" + file);
+                    getLog().info("ADDED: " + file);
                 }
             }
         }
