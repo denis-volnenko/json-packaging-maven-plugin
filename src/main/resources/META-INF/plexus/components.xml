@@ -18,7 +18,8 @@
 <!--                    <prepare-package>org.apache.maven.plugins:maven-jar-plugin:jar</prepare-package>-->
 <!--                    <package>${project.groupId}:${project.artifactId}:${project.version}:fsm</package>-->
                     <package>${project.groupId}:${project.artifactId}:${project.version}:package</package>
-                    <install>${project.groupId}:${project.artifactId}:${project.version}:install</install>
+<!--                    <install>${project.groupId}:${project.artifactId}:${project.version}:install</install>-->
+                    <install>org.apache.maven.plugins:maven-install-plugin:install</install>
                     <deploy>org.apache.maven.plugins:maven-deploy-plugin:deploy</deploy>
                 </phases>
             </configuration>

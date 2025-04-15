@@ -2,6 +2,7 @@ package ru.volnenko.maven.plugin.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -33,6 +34,9 @@ public class JsonPackage extends AbstractMojo {
         final ObjectMapper objectMapper = new ObjectMapper();
         final Map<String, Object> map = new LinkedHashMap<>();
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(build, map);
+
+        final Artifact artifact =  project.getArtifact();
+        artifact.setFile(build);
     }
 
 }
