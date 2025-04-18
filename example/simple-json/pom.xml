@@ -29,10 +29,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>ru.volnenko.example.yaml</groupId>
+            <groupId>ru.volnenko.example.json</groupId>
             <artifactId>openapi</artifactId>
             <version>1.0.0</version>
-            <type>yaml</type>
+            <type>json</type>
+<!--            <classifier>swagger</classifier>-->
             <scope>compile</scope>
         </dependency>
     </dependencies>

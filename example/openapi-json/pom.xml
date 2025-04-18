@@ -18,6 +18,7 @@
     </developers>
 
     <properties>
+        <classifier>openapi</classifier>
         <extension.wagon.groupId>org.apache.maven.wagon</extension.wagon.groupId>
         <extension.wagon.artifactId>wagon-webdav-jackrabbit</extension.wagon.artifactId>
         <extension.wagon.version>3.5.2</extension.wagon.version>
@@ -31,6 +32,31 @@
         <finalName>example</finalName>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version> <!-- Use the latest version -->
+                <executions>
+                    <execution>
+                        <id>attach-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <!-- Configure additional binary artifacts here -->
+                                <artifact>
+                                    <file>${build.directory}/example.json</file>
+                                    <type>json</type> <!-- Specify a custom type if necessary -->
+                                    <classifier>swagger</classifier> <!-- Optional classifier -->
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+
                 <groupId>ru.volnenko.maven.plugin</groupId>
                 <artifactId>json-packaging-maven-plugin</artifactId>
                 <version>1.0.0</version>
